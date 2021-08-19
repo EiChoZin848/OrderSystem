@@ -1,0 +1,34 @@
+<center>
+    <h2 style="font-size: 40px; margin-bottom: 50px; color: #f70b0b">INFORTECH<br /><br/> <span style="color: #1ab394; font-weight: 900">Solutions</span></h2>
+</center>
+
+    <% if alert %>
+        <div class="alert alert-danger">
+            <strong>Alert!</strong> <%= alert %>
+        </div>
+    <% end %>
+
+<div class="ibox-content">
+    <% if notice %>
+        <div class="alert alert-info">
+            <strong>Notice!</strong> <%= notice %>
+        </div>
+    <% end %>
+    <br />
+    
+    <center><h3 style="margin-bottom: 40px;">Welcome to RailsOMS</h3></center>
+    <% form_for(:session, :url => sessions_path) do |f| %>
+        <div class="form-group m-t">      
+            <%= f.text_field :email,:placeholder=>"Email", :class=>"form-control", :autofocus => true %>
+        </div>
+        <div class="form-group">
+            
+            <%= f.password_field :password, :placeholder=>"Password", :class=>"form-control", :autocomplete => "off" %>
+        </div>
+            <%= f.submit "Sign in", :class => "btn btn-primary block full-width m-b" %>
+
+    <% end %>    
+</div>
+<div>
+    <p>New user? <%= link_to "Sign up now!", '/signup' %></p>
+</div>

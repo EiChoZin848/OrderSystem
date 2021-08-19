@@ -1,0 +1,18 @@
+<header>
+    <nav class="round">
+        <ul>
+            <li><%= link_to "Home", root_path %></li>
+            <% if signed_in? %>
+                <li><%= link_to "Profile", current_user %></li>
+                
+            <% end %>
+            <li><%= link_to "Help", "#" %></li>
+
+            <% if signed_in? %>
+                <li><%= link_to "Sign out", "/signout", :method => :delete %></li>
+            <% else %>
+                <li><%= link_to "Sign in", "/signin" %></li>
+            <% end %>
+        </ul>
+    </nav>
+</header>
